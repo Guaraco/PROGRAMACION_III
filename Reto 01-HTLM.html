@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Guardia Barber Shop</title>
+    <style>
+        /* Estilos generales */
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 20px; 
+            background-color: #f4f4f4; 
+        }
+
+        /* Encabezado con nombre del negocio y eslogan */
+        header { 
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+        }
+
+        .logo-header { 
+            max-width: 300px; 
+            height: auto; 
+            display: block; 
+            margin: 0 auto; 
+        }
+
+        .container { 
+            max-width: 600px; 
+            margin: auto; 
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px; 
+            border-radius: 10px; 
+        }
+
+        /* Galería de imágenes */
+        .gallery { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 10px; 
+            margin-top: 20px; 
+        }
+
+        .gallery img { 
+            width: 45%; 
+            border-radius: 10px; 
+        }
+
+        /* Botones de contacto */
+        a { 
+            display: block; 
+            margin: 10px 0; 
+            text-decoration: none; 
+            color: white; 
+            background: #28a745; 
+            padding: 10px; 
+            border-radius: 5px; 
+        }
+
+        /* Formulario de contacto */
+        form { 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        input, textarea { 
+            margin: 5px 0; 
+            padding: 10px; 
+            width: 100%; 
+        }
+
+        button { 
+            background: #007bff; 
+            color: white; 
+            padding: 10px; 
+            border: none; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Encabezado con logo, nombre del negocio y eslogan -->
+    <header>
+        <img src="https://i.imgur.com/BvUgYfs.jpg" alt="Logo de The Guardia Barber Shop" class="logo-header">
+        <h1>The Guardia Barber Shop</h1>
+        <p>"Un Corte de Película"</p>
+    </header>
+
+    <div class="container">
+        <!-- 3. Descripción breve del negocio y servicios -->
+        <p>Somos una barbería especializada en cortes modernos, clásicos y personalizados, brindando siempre un servicio de calidad y estilo.</p>
+
+        <!-- 4. Enlaces de contacto -->
+        <a href="https://wa.me/18292215419" target="_blank">Contáctanos por WhatsApp</a>
+        <a href="https://www.instagram.com/theguardiabarbershop?igsh=MWZ4MWQ5eGRpZmtnaA==" target="_blank">Síguenos en Instagram</a>
+
+        <!-- 2. Imagen del negocio o productos -->
+        <h2>Galería</h2>
+        <div class="gallery">
+            <img src="https://i.imgur.com/Y6AEF3z.jpg" alt="Foto mia en el espejo">
+            <img src="https://i.imgur.com/rmh4XZ7.jpg" alt="El peluquero con clientes satisfechos">
+        </div>
+
+        <!-- 5. Formulario de reserva o contacto -->
+        <h2>Reserva tu cita</h2>
+        <form action="guardar.php" method="post">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
