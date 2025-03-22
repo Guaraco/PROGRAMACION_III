@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Accesorio</title>
+    <style>
+        /* Estilo general */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: silver;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: black;
+            color: gold;
+            text-align: left;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: 100px; /* Tamaño del logo */
+            margin-right: 20px;
+        }
+
+        .slogan {
+            font-family: "Lucida Handwriting", cursive;
+            color: silver;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: gold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            color: silver;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            background-color: gold;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: silver;
+        }
+
+        /* Estilo del error dinámico */
+        #errorScreen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: black;
+            color: gold;
+            padding: 20px;
+            border-radius: 10px;
+            animation: shake 1.5s infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            25% { transform: translate(-48%, -50%) rotate(-2deg); }
+            50% { transform: translate(-50%, -48%) rotate(2deg); }
+            75% { transform: translate(-52%, -50%) rotate(-2deg); }
+        }
+
+        /* Imagen del USB malicioso */
+        #storySection img {
+            width: 150px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* Chatbot ícono como botón */
+        #chatbotIcon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: gold;
+            color: black;
+            font-size: 30px;
+            text-align: center;
+            line-height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* Caja del chatbot */
+        #chatbotBox {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            background-color: black;
+            border: 2px solid gold;
+            border-radius: 10px;
+            color: silver;
+            display: none;
+            padding: 10px;
+        }
+
+        /* Estilo para el catálogo */
+        .productos {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .productos img {
+            width: 200px;
+            height: 200px;
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .productos img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Botones para mover las imágenes */
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .prev, .next {
+            background-color: gold;
+            color: black;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: silver;
+        }
+    </style>
+</head>
+<body onload="showErrorScreen()">
+    <header>
+        <img src="recursos/logo.png" alt="Logo">
+        <div>
+            <h1 class="glitch">Unlimited Accesorio</h1>
+            <p class="slogan">Para mujeres como tú, sin límites</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Pantalla de Error -->
+        <section id="errorScreen">
+            <h2>Error: No pudimos encontrar el lugar que buscas...</h2>
+            <button onclick="showStory()">Recuperar Página</button>
+        </section>
+
+        <!-- Sección de Historia -->
+        <section id="storySection" class="hidden">
+            <h2>La Historia</h2>
+            <p>Hace semanas, nuestra tienda fue víctima de un ataque cibernético devastador. Todo comenzó cuando uno de nuestros empleados conectó un USB aparentemente inofensivo a nuestro sistema principal.</p>
+            <p>Lo que parecía un dispositivo común resultó contener un software malicioso diseñado para borrar nuestra presencia digital. En cuestión de minutos, nuestra página web desapareció, nuestras redes sociales fueron eliminadas y todos los registros de nuestros clientes se perdieron.</p>
+            <p>El impacto fue devastador, pero decidimos no rendirnos. Unimos fuerzas con expertos en ciberseguridad, rediseñamos nuestros sistemas y trabajamos sin descanso para recuperar nuestra identidad digital. Hoy, resurgimos más fuertes, con nuevas herramientas y una visión renovada para servirte mejor.</p>
+            <img src="recursos/usb-misterioso.jpg" alt="USB Malicioso">
+            <button onclick="loadMainContent()">Inicio</button>
+        </section>
+
+        <!-- Contenido Principal -->
+        <section id="contenido" class="hidden">
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showSection('nosotros')">Nosotros</a></li>
+                    <li><a href="#" onclick="showSection('catalogo')">Catálogo</a></li>
+                    <li><a href="#" onclick="showSection('contacto')">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <article id="nosotros">
+                <h2>Nosotros</h2>
+                <p>Unlimited Accesorio es una tienda dedicada a ofrecer los mejores accesorios para mujeres seguras, modernas y sin límites.</p>
+            </article>
+
+            <article id="catalogo" class="hidden">
+                <h2>Catálogo de Productos</h2>
+                <div class="productos">
+                    <div class="nav-buttons">
+                        <button class="prev" onclick="moveImages(-1)">&#10094;</button>
+                    </div>
+                    <img src="recursos/slogan.jpg" alt="Producto 1">
+                    <img src="recursos/collar.jpg" alt="Producto 2">
+                    <img src="recursos/cruz.jpg" alt="Producto 3">
+                    <img src="recursos/collaM.jpg" alt="Producto 4">
+                    <img src="recursos/oreja.jpg" alt="Producto 5">
+					<img src="recursos/oreja1.jpg" alt="Producto 6">
+					<img src="recursos/oreja3.jpg" alt="Producto 7">
+					<img src="recursos/reloj.jpg" alt="Producto 8">
+					<img src="recursos/relojes.jpg" alt="Producto 9">
+					<img src="recursos/pulseras.jpg" alt="Producto 10">
+                    <div class="nav-buttons">
+                        <button class="next" onclick="moveImages(1)">&#10095;</button>
+                    </div>
+                </div>
+            </article>
+
+            <article id="contacto" class="hidden">
+                <h2>Contacto</h2>
+                <div class="contact-links">
+                    <a href="https://www.instagram.com/unlimited_accessories03?igsh=MWl0MHA4dWQ5ZjZ5dQ==" target="_blank">
+                        <img src="recursos/instagram.jpg" alt="Instagram">
+                    </a>
+                    <a href="https://wa.me/18298104501" target="_blank">
+                        <img src="recursos/whatsapp.jpg" alt="WhatsApp">
+                    </a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Unlimited Accesorio. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Botón para abrir el chat -->
+    <div id="chatbotIcon" onclick="toggleChatbot()">💬</div>
+
+    <!-- Caja del chat -->
+    <div id="chatbotBox">
+        <p>Hola, soy tu asistente virtual. Se te ha asignado el turno <strong id="turno"></strong>. Por favor, espera mientras procesamos tu solicitud.</p>
+    </div>
+
+    <script>
+        function showErrorScreen() {
+            document.getElementById("errorScreen").style.display = "block";
+            document.getElementById("storySection").classList.add("hidden");
+            document.getElementById("contenido").classList.add("hidden");
+        }
+
+        function showStory() {
+            document.getElementById("errorScreen").style.display = "none";
+            document.getElementById("storySection").classList.remove("hidden");
+        }
+
+        function loadMainContent() {
+            document.getElementById("storySection").classList.add("hidden");
+            document.getElementById("contenido").classList.remove("hidden");
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll("article");
+            sections.forEach(section => section.classList.add("hidden"));
+            document.getElementById(sectionId).classList.remove("hidden");
+        }
+
+        function toggleChatbot() {
+            const chatbotBox = document.getElementById("chatbotBox");
+            const isHidden = chatbotBox.style.display === "none" || chatbotBox.style.display === "";
+            if (isHidden) {
+                const turno = Math.floor(Math.random() * 10) + 1;
+                document.getElementById("turno").textContent = turno;
+                chatbotBox.style.display = "block";
+            } else {
+                chatbotBox.style.display = "none";
+            }
+        }
+
+        // Función para mover las imágenes
+        function moveImages(direction) {
+            const container = document.querySelector('.productos');
+            const scrollAmount = container.scrollWidth / 5;
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
