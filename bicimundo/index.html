@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiciMundo - Tu tienda de bicicletas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>BiciMundo</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+                <a href="#productos"><i class="fas fa-bicycle"></i> Productos</a>
+                <a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a>
+            </div>
+            <div class="menu-btn">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección Inicio -->
+    <section id="inicio" class="inicio">
+        <!-- Sección Nosotros -->
+        <div class="nosotros-section">
+            <div class="nosotros-content">
+                <div class="nosotros-texto">
+                    <h2>Sobre Nosotros</h2>
+                    <p>BiciMundo nació de la pasión por las bicicletas y el ciclismo. Desde 2010, nos hemos dedicado a ofrecer las mejores bicicletas y accesorios a nuestros clientes.</p>
+                    <div class="nosotros-features">
+                        <div class="nosotros-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>10+ años de experiencia</span>
+                        </div>
+                        <div class="nosotros-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Servicio técnico certificado</span>
+                        </div>
+                        <div class="nosotros-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Garantía en todos los productos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nosotros-imagen">
+                    <img src="https://bicimundo.com.do/cdn/shop/files/473_copy_2048x.jpg?v=1640495513">
+                </div>
+            </div>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="estadisticas">
+            <div class="estadistica-item">
+                <i class="fas fa-bicycle"></i>
+                <span class="contador" data-target="500">0</span>
+                <p>Bicicletas Vendidas</p>
+            </div>
+            <div class="estadistica-item">
+                <i class="fas fa-users"></i>
+                <span class="contador" data-target="1000">0</span>
+                <p>Clientes Satisfechos</p>
+            </div>
+            <div class="estadistica-item">
+                <i class="fas fa-tools"></i>
+                <span class="contador" data-target="200">0</span>
+                <p>Servicios Realizados</p>
+            </div>
+            <div class="estadistica-item">
+                <i class="fas fa-star"></i>
+                <span class="contador" data-target="4.8">0</span>
+                <p>Valoración Media</p>
+            </div>
+        </div>
+
+        <!-- Características -->
+        <div class="inicio-features">
+            <div class="features-header">
+                <h2>Nuestros Servicios</h2>
+                <p>Descubre todo lo que podemos ofrecerte en BiciMundo</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-bicycle"></i>
+                    <h3>Amplia Variedad</h3>
+                    <p>Bicicletas para todos los estilos y necesidades</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-tools"></i>
+                    <h3>Servicio Técnico</h3>
+                    <p>Mantenimiento y reparación profesional</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Garantía</h3>
+                    <p>Productos con garantía y respaldo</p>
+                </div>
+            </div>
+        </div>
+      
+        <!-- Ofertas Especiales -->
+        <div class="ofertas-especiales">
+            <h2>Ofertas Especiales</h2>
+            <div class="ofertas-grid">
+                <div class="oferta-card">
+                    <span class="oferta-tag">-20%</span>
+                    <img src="https://labicicleteria.do/wp-content/uploads/2024/11/orbea-mtb-junior-laufey-27-h10-r014-1700x1425.webp" alt="Bicicleta de montaña en oferta">
+                    <h3>Bicicleta de Montaña Pro</h3>
+                    <p class="precio-original">$1,200.00</p>
+                    <p class="precio-oferta">$960.00</p>
+                    <button class="btn-comprar">Comprar Ahora</button>
+                </div>
+                <div class="oferta-card">
+                    <span class="oferta-tag">-15%</span>
+                    <img src=" https://startlap.com.ar/wp-content/uploads/2023/12/Bicicleta-Ruta-Volta-Bresh-Elite-2024-R700-Carbono-Blanca-descripcion-01.jpg" alt="Bicicleta de ruta en oferta">
+                    <h3>Bicicleta de Ruta Elite</h3>
+                    <p class="precio-original">$1,500.00</p>
+                    <p class="precio-oferta">$1,275.00</p>
+                    <button class="btn-comprar">Comprar Ahora</button>
+                </div>
+                <div class="oferta-card">
+                    <span class="oferta-tag">-25%</span>
+                    <img src="https://www.sanferbike.com/videostv/wp-content/uploads/2020/05/LIV-Flourish-2.jpg" alt="Bicicleta urbana en oferta">
+                    <h3>Bicicleta Urbana Comfort</h3>
+                    <p class="precio-original">$800.00</p>
+                    <p class="precio-oferta">$600.00</p>
+                    <button class="btn-comprar">Comprar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Productos Destacados -->
+    <section id="productos" class="productos">
+        <h2>Productos Destacados</h2>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <img src="https://decathlon.com.pa/cdn/shop/files/8d7072719593c32625104dfb7dd90b0a_675x.progressive.jpg?v=1729791421" alt="Bicicleta de montaña">
+                <h3>Bicicleta de Montaña XC</h3>
+                <p>Perfecta para senderos y aventuras off-road</p>
+                <span class="precio">$1,200.00</span>
+                <button class="btn-comprar">Comprar Ahora</button>
+            </div>
+            <div class="producto-card">
+                <img src="https://s.alicdn.com/@sc04/kf/He4fa45426eff453fb1ef6177cc18bb952.jpg_300x300.jpg" alt="Bicicleta de ruta">
+                <h3>Bicicleta de Ruta Speed</h3>
+                <p>Diseñada para velocidad y rendimiento</p>
+                <span class="precio">$1,500.00</span>
+                <button class="btn-comprar">Comprar Ahora</button>
+            </div>
+            <div class="producto-card">
+                <img src="https://contents.mediadecathlon.com/p2179491/k$11e82e018019fc864cf1d2a532ab1f61/casco-bicicleta-urbana-500-amarillo-fluorescente.jpg?format=auto&quality=40&f=800x800" alt="Casco de seguridad">
+                <h3>Casco de Seguridad</h3>
+                <p>Máxima protección y comodidad para ciclistas</p>
+                <span class="precio">$89.99</span>
+                <button class="btn-comprar">Comprar Ahora</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contacto">
+        <h2>Contáctanos</h2>
+        <div class="contacto-container">
+            <form id="contacto-form" class="contacto-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BiciMundo</h3>
+                <p>Tu tienda especializada en bicicletas y accesorios</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/bicimundord/?locale=es_LA" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/bicimundord/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/bicimundosrl" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@bicimundomx" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: info@bicimundo.com</p>
+                <p>Teléfono: (123) 456-7890</p>
+                <p>Dirección: Calle Principal #123</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BiciMundo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
