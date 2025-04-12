@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explorador de películas populares con información detallada sobre las mejores películas">
+    <title>CineExplorer - Películas Populares</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CineExplorer</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Panel de filtros -->
+        <div class="filters-panel">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Buscar película..." class="search-input">
+                <button id="search-button" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="genre-filter">Género</label>
+                    <select id="genre-filter" class="filter-select">
+                        <option value="">Todos los géneros</option>
+                        <option value="Action">Acción</option>
+                        <option value="Adventure">Aventura</option>
+                        <option value="Animation">Animación</option>
+                        <option value="Biography">Biografía</option>
+                        <option value="Comedy">Comedia</option>
+                        <option value="Crime">Crimen</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Fantasy">Fantasía</option>
+                        <option value="Horror">Terror</option>
+                        <option value="Sci-Fi">Ciencia Ficción</option>
+                        <option value="Thriller">Thriller</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="year-filter">Año</label>
+                    <select id="year-filter" class="filter-select">
+                        <option value="">Todos los años</option>
+                        <option value="2020-2023">2020 - 2023</option>
+                        <option value="2010-2019">2010 - 2019</option>
+                        <option value="2000-2009">2000 - 2009</option>
+                        <option value="1990-1999">1990 - 1999</option>
+                        <option value="1980-1989">1980 - 1989</option>
+                        <option value="1970-1979">1970 - 1979</option>
+                        <option value="1900-1969">Antes de 1970</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="rating-filter">Calificación</label>
+                    <select id="rating-filter" class="filter-select">
+                        <option value="">Todas las calificaciones</option>
+                        <option value="9">9.0 o más</option>
+                        <option value="8">8.0 o más</option>
+                        <option value="7">7.0 o más</option>
+                        <option value="6">6.0 o más</option>
+                        <option value="5">5.0 o más</option>
+                    </select>
+                </div>
+
+                <button id="reset-filters" class="reset-button">
+                    <i class="fas fa-undo"></i> Restablecer
+                </button>
+            </div>
+            
+            <div class="categories-container">
+                <h3>Categorías Populares</h3>
+                <div class="categories-list">
+                    <button class="category-tag" data-term="star wars">Star Wars</button>
+                    <button class="category-tag" data-term="godfather">El Padrino</button>
+                    <button class="category-tag" data-term="avengers">Avengers</button>
+                    <button class="category-tag" data-term="harry potter">Harry Potter</button>
+                    <button class="category-tag" data-term="matrix">Matrix</button>
+                    <button class="category-tag" data-term="jurassic">Jurassic</button>
+                    <button class="category-tag" data-term="batman">Batman</button>
+                    <button class="category-tag" data-term="terminator">Terminator</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor para estadísticas y resultados -->
+        <div class="results-info">
+            <p id="results-count">Mostrando <span>0</span> películas</p>
+            <div class="view-options">
+                <button id="grid-view" class="view-button active" title="Vista de cuadrícula">
+                    <i class="fas fa-th-large"></i>
+                </button>
+                <button id="list-view" class="view-button" title="Vista de lista">
+                    <i class="fas fa-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="loading" id="loading" aria-live="polite">
+            <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#2c3e50">
+                <g fill="none" fill-rule="evenodd">
+                    <g transform="translate(1 1)" stroke-width="2">
+                        <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
+                        <path d="M36 18c0-9.94-8.06-18-18-18">
+                            <animateTransform
+                                attributeName="transform"
+                                type="rotate"
+                                from="0 18 18"
+                                to="360 18 18"
+                                dur="1s"
+                                repeatCount="indefinite"/>
+                        </path>
+                    </g>
+                </g>
+            </svg>
+            <p>Cargando las mejores películas...</p>
+        </div>
+        
+        <div class="error" id="error" style="display: none;" aria-live="assertive">
+            Ocurrió un error al cargar las películas. Por favor, intenta de nuevo más tarde.
+        </div>
+        
+        <div class="movies-grid" id="movies-container" aria-label="Lista de películas populares"></div>
+
+        <!-- Botón de cargar más -->
+        <div class="load-more-container">
+            <button id="load-more" class="load-more-button">
+                <i class="fas fa-plus-circle"></i> Cargar más películas
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Creado por CineExplorer | Datos proporcionados por <a href="https://www.omdbapi.com/" target="_blank" rel="noopener noreferrer">OMDb API</a></p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html> 
